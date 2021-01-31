@@ -11,10 +11,12 @@ GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-font = pg.font.Font(None, 36)
-text = font.render("Вопрос?", True, BLACK )
-#1 ргумент- текст, второй -сглаживание, третий - цвет текста, четвертый - цвет фона)
-screen.blit(text, (10, 100))
+screen.fill(WHITE)
+
+font3 = pg.font.SysFont("serif", 36)
+text3 = font3.render("Вопрос", True, BLACK)
+
+screen.blit(text3, (10, 10))
 pg.display.update()
 
 class Button:
@@ -32,8 +34,8 @@ class Button:
     def jumpto(self):
         pass
     
-btn_yes = Button(GREEN, 10, 50, 100, 30)
-btn_no = Button(RED, 160, 50, 100, 30)
+btn_yes = Button(GREEN, 10, 100, 150, 30)
+btn_no = Button(RED, 180, 100, 150, 30)
 
 running = True
 while running:
@@ -44,5 +46,6 @@ while running:
             running = False
     btn_yes.draw(screen)
     btn_no.draw(screen)
+    screen.blit(text3, (10, 10))
     pg.display.update()
 pg.quit()
